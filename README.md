@@ -325,7 +325,7 @@ The following configuration variables can be used to tweak settings. Defaults ar
 Running the Recorder protected by an Nginx or Apache server is possible and is
 the only recommended method if you want to serve data behind localhost. The
 snippets below shows the basics of how to set this up, but any real deployment
-should also use TLS. Without TLS, any data is transmitted plain text over the
+should also use TLS. Without TLS, any data is transmitted in clear over the
 network.
 
 Additionally, authentication should be enabled, as shown by the snippet for
