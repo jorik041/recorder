@@ -6,6 +6,12 @@ The program was initially an MQTT client only so protected by an MQTT broker. Th
 
 In MQTT mode, the Recorder has no open incoming TCP ports -- it connects out to an MQTT broker (either TCP/1883 or TCP/8883, configurable) and optionally to a geo-location service (TCP/443, likewise configurable).
 
+## file system
+
+Data is stored by the Recorder in either plain files or in an LMDB database, the latter for geo-lookups and sundry other data (see [STORE](store.md)].
+
+Any user which has access to the files into which the OwnTracks Recorder stores data can obviously read that data.
+
 ## HTTP
 
 Roughly in 2015 we decided to offer HTTP for those people who weren't willing to stand up an MQTT broker, imagining that HTTP would be easier for them. Our apps got HTTP support as did the Recorder. But that meant that the Recorder needed incoming HTTP (TCP/80, configurable) for the apps to connect to and publish their location payloads.
@@ -18,3 +24,15 @@ Very specifically we need to warn Recorder users using HTTP:
 - any client permitted to access the `/pub` endpoint can publish data to the Recorder
 - any client permitted to access the `/api` endpoint can access any user's data, and even destroy it, depending on whether or not the Recorder was built with the `WITH_KILL` flag.
 - any client permitted to access the `/ws` endpoint can access users' LAST locations
+
+## payload encryption
+
+In addition to using TLS connections, either for MQTT or HTTP, you may wish to enable payload encryption within the app. We have [documented this in the Booklet](https://owntracks.org/booklet/features/encrypt/).
+
+Please pay attention to the Notes section of that page, as payload encryption might well be counterproductive for your use-case.
+
+
+
+## further reading
+
+Please also be aware of [our security recommendations for the apps](https://owntracks.org/booklet/features/security/), particularly the changes done here beginning in July 2026.
