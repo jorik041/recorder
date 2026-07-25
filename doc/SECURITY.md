@@ -8,7 +8,7 @@ In MQTT mode, the Recorder has no open incoming TCP ports -- it connects out to 
 
 ## file system
 
-Data is stored by the Recorder in either plain files or in an LMDB database, the latter for geo-lookups and sundry other data (see [STORE](store.md)].
+Data is stored by the Recorder in either plain files or in an LMDB database, the latter for geo-lookups and sundry other data (see [STORE](store.md)]. Some of this data includes possible payload encryption keys (see below) so the database ought to be well protected.
 
 Any user which has access to the files into which the OwnTracks Recorder stores data can obviously read that data.
 
@@ -29,7 +29,7 @@ Very specifically we need to warn Recorder users using HTTP:
 
 In addition to using TLS connections, either for MQTT or HTTP, you may wish to enable payload encryption within the app. We have [documented this in the Booklet](https://owntracks.org/booklet/features/encrypt/).
 
-Please pay attention to the Notes section of that page, as payload encryption might well be counterproductive for your use-case.
+Please pay attention to the Notes section of that page, as payload encryption might well be counterproductive for your use-case. Also note, that encrypted payloads received by the Recorder are decrypted if possible, and stored in clear in the corresponding files on the file system.
 
 
 
