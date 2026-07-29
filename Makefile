@@ -129,7 +129,7 @@ base64.o: base64.h base64.c
 	$(CC) $(CFLAGS) -Wno-unused-result -Wno-uninitialized -c base64.c
 gcache.o: gcache.c gcache.h json.h
 misc.o: misc.c misc.h udata.h
-http.o: http.c mongoose.h util.h http.h storage.h version.h hooks.h
+http.o: http.c mongoose.h util.h http.h storage.h version.h hooks.h config.mk Makefile
 util.o: util.c util.h
 mongoose.o: mongoose.c mongoose.h
 ocat.o: ocat.c storage.h util.h version.h config.mk Makefile
