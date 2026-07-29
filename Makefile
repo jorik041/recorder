@@ -36,13 +36,12 @@ true \n
 #endif' | $(CPP) -P - >/dev/null 2>&1 && echo yes
 endef
 
-LIBLM ?= no
+LIBLM = no
 
 ifeq ($(WITH_MQTT),yes)
 	CFLAGS += -DWITH_MQTT=1
 	CFLAGS += $(MOSQUITTO_CFLAGS)
 	LIBS += $(MOSQUITTO_LIBS)
-	LIBLM ?= yes
 endif
 
 ifeq ($(WITH_PING),yes)
@@ -54,7 +53,7 @@ ifeq ($(WITH_LUA),yes)
 	LIBS   += $(LUA_LIBS)
 	OTR_OBJS += hooks.o
 else
-	LIBLM ?= yes
+	LIBLM = yes
 endif
 
 ifeq ($(WITH_ENCRYPT),yes)
