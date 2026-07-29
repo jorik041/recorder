@@ -122,3 +122,6 @@ LMDB_LIBS   = `$(PKG_CONFIG) --libs lmdb`
 
 LIBCONFIG_CFLAGS = `$(PKG_CONFIG) --cflags libconfig`
 LIBCONFIG_LIBS   = `$(PKG_CONFIG) --libs libconfig`
+
+LIBCURL_CFLAGS = `$(PKG_CONFIG) --cflags libcurl`
+LIBCURL_LIBS   = `$(PKG_CONFIG) --libs libcurl`

@@ -2,7 +2,6 @@ include config.mk
 
 CFLAGS	+= -Wall -DNS_ENABLE_IPV6
 LIBS	= $(MORELIBS)
-LIBS 	+= -lcurl
 
 TARGETS=
 OTR_OBJS = json.o \
@@ -25,6 +24,9 @@ LIBS += $(LMDB_LIBS)
 
 CFLAGS += $(LIBCONFIG_CFLAGS)
 LIBS += $(LIBCONFIG_LIBS)
+
+CFLAGS += $(LIBCURL_CFLAGS)
+LIBS += $(LIBCURL_LIBS)
 
 LIBS += -lpthread
 
