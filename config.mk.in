@@ -116,3 +116,9 @@ LUA_LIBS   = `$(PKG_CONFIG) --libs lua`
 
 SODIUM_CFLAGS = `$(PKG_CONFIG) --cflags libsodium`
 SODIUM_LIBS   = `$(PKG_CONFIG) --libs libsodium`
+
+LMDB_CFLAGS = `$(PKG_CONFIG) --cflags lmdb`
+LMDB_LIBS   = `$(PKG_CONFIG) --libs lmdb`
+
+LIBCONFIG_CFLAGS = `$(PKG_CONFIG) --cflags libconfig`
+LIBCONFIG_LIBS   = `$(PKG_CONFIG) --libs libconfig`
